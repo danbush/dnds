@@ -77,8 +77,8 @@
 				<integer>0</integer>
 				<key>script</key>
 				<string># THESE VARIABLES MUST BE SET. SEE THE ONEUPDATER README FOR AN EXPLANATION OF EACH.
-readonly remote_info_plist='https://raw.githubusercontent.com/danbush/hltb-alfred-workflow/master/info.plist'
-readonly workflow_url='https://github.com/danbush/hltb-alfred-workflow/raw/master/How%20Long%20to%20Beat.alfredworkflow'
+readonly remote_info_plist='https://raw.githubusercontent.com/danbush/dnds/master/info.plist'
+readonly workflow_url='https://github.com/danbush/dnds/raw/master/Compendium%20Search.alfredworkflow'
 readonly download_type='direct'
 readonly frequency_check='0'
 
@@ -309,7 +309,7 @@ fi</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>1.0</string>
+	<string>1.0.1</string>
 	<key>webaddress</key>
 	<string>https://roll20.net/</string>
 </dict>
