@@ -65,11 +65,13 @@ for item in search_results_pagenames
   subtitle_description = ""
   if search_results_descriptions[i] != nil 
     subtitle_description = " | " + search_results_descriptions[i]
+    subtitle_description_2 =  search_results_descriptions[i].to_s[60..-1]
   end
 
   workflow.result
       .title(search_results_names[i])
       .subtitle(search_results_categories[i].to_s + subtitle_item.to_s + subtitle_description.to_s)
+      .cmd(subtitle_description_2, category_fixed + item_fixed)
       .arg(category_fixed + item_fixed)
   i += 1
   if i >= 5
