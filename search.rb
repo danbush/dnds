@@ -77,7 +77,12 @@ for item in search_results_pagenames
   end
 end
 
-if search_results_names[0] == nil
+if query == "update!"
+  workflow.result
+      .title("Hit enter to update the workflow")
+      .subtitle("This will pull the latest version from git. Any modifications will be overwritten.")
+      .arg("update!")
+elsif search_results_names[0] == nil
   workflow.result
       .title("Can't find any results. Maybe its in an additional book?")
       .subtitle("Hit enter to search online")
