@@ -55,7 +55,7 @@ for item in search_results_pagenames
   item_url = "https://app.roll20.net/compendium/dnd5e/" + category_fixed + item_fixed + ".json"
   item_search = 
     HTTParty.get(item_url)
-  search_results_descriptions << item_search["content"].to_s.gsub("\t", "")
+  search_results_descriptions << item_search["content"].to_s.gsub("\t", "").gsub("\n", " ")
 
   subtitle_item = ""
   if item != search_results_names[i] 
@@ -72,13 +72,16 @@ for item in search_results_pagenames
       .subtitle(search_results_categories[i].to_s + subtitle_item.to_s + subtitle_description.to_s)
       .arg(category_fixed + item_fixed)
   i += 1
-  if i >= 10
+  if i >= 5
     break
   end
 end
 
-workflow.result
-      .title(search_results_names[0])
-      .subtitle(search_results_descriptions[0])
+if search_results_names[0] == nil
+  workflow.result
+      .title("Can't find any results. Maybe its in an additional book?")
+      .subtitle("Hit enter to search online")
       .arg(query)
+end
+
 print workflow.output
